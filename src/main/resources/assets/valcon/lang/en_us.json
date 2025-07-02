@@ -1,0 +1,19 @@
+{
+  "itemGroup.valcon": "Valcon",
+  "creativetab.valcon.valcon_tab": "Valcon",
+
+  "item.valcon.soulborn_blade": "Soulborn Blade",
+  "item.valcon.soul_steel_ingot": "Soul Steel Ingot",
+  "item.valcon.soul_quartz": "Soul Quartz",
+  "item.valcon.enchanting_guide": "Enchanting Guide",
+  "item.valcon.soul": "Soul",
+  "item.valcon.sarissa": "Sarissa",
+
+  "block.valcon.soul_forge": "Soul Forge",
+  "block.valcon.bast_statue": "Bast Statue",
+
+  "sounds.valcon.soul_forge_use": "Soul Forge Echoes",
+
+  "painting.valcon.motivation.title": "Motivation",
+  "painting.valcon.motivation.author": "Seren Sonlu"
+}

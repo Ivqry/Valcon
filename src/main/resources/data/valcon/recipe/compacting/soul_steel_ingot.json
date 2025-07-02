@@ -1,0 +1,71 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "create:powdered_obsidian"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul_quartz"
+    },
+    {
+      "item": "valcon:soul"
+    },
+    {
+      "item": "create:experience_nugget"
+    },
+    {
+      "item": "create:experience_nugget"
+    },
+    {
+      "item": "create:experience_nugget"
+    },
+    {
+      "item": "create:experience_nugget"
+    },
+    {
+      "item": "create:experience_nugget"
+    },
+    {
+      "item": "create:experience_nugget"
+    }
+  ],
+  "results": [
+    {
+      "id": "valcon:soul_steel_ingot"
+    }
+  ]
+}

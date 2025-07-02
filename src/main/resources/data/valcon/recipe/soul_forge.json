@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "sss",
+        "sSs",
+        "ddd"
+    ],
+    "key": {
+        "s": {
+            "item": "alloyed:steel_ingot"
+        },
+        "S": {
+            "item": "valcon:soul"
+        },
+        "d": {
+            "item": "minecraft:polished_deepslate"
+        }
+    },
+    "result": {
+        "id": "valcon:soul_forge",
+        "count": 1
+    }
+}
