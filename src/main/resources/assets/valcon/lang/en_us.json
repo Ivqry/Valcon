@@ -8,12 +8,27 @@
   "item.valcon.enchanting_guide": "Enchanting Guide",
   "item.valcon.soul": "Soul",
   "item.valcon.sarissa": "Sarissa",
+  "item.valcon.compass_casting_mold": "Compass Casting Mold",
+  "item.valcon.lembas": "Lembas",
 
   "block.valcon.soul_forge": "Soul Forge",
   "block.valcon.bast_statue": "Bast Statue",
 
+  "painting.valcon.motivation.title": "Motivation",
+  "painting.valcon.motivation.author": "Seren Sonlu",
+
   "sounds.valcon.soul_forge_use": "Soul Forge Echoes",
 
-  "painting.valcon.motivation.title": "Motivation",
-  "painting.valcon.motivation.author": "Seren Sonlu"
+  "tooltip.valcon.bast_statue.tooltip": "Grants resistance to players within a 24-block radius.",
+  "tooltip.valcon.soul_forge.tooltip.unworthy": "This item is unworthy.",
+  "tooltip.valcon.soul_forge.tooltip.success": "Forge successful! Item made imperishable.",
+  "tooltip.valcon.enchanting_guide.tooltip.line0": "They say this tome holds the secrets",
+  "tooltip.valcon.enchanting_guide.tooltip.line1": "to unlocking mythical gear...",
+  "tooltip.valcon.soul.tooltip": "If you listen closely, you can hear the echoes of the ancients...",
+  "tooltip.valcon.compass_casting_mold.tooltip.line0": "Compass Upgrade",
+  "tooltip.valcon.compass_casting_mold.tooltip.line1": "Applies to:",
+  "tooltip.valcon.compass_casting_mold.tooltip.line2": " §9Compass",
+  "tooltip.valcon.compass_casting_mold.tooltip.line3": "§7Ingredients:",
+  "tooltip.valcon.compass_casting_mold.tooltip.line4": " §9Gold, Emeralds, & Sculk",
+  "tooltip.valcon.lembas.tooltip": "Comfort (05:00)"
 }

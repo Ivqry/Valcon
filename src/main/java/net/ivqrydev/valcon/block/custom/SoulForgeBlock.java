@@ -48,13 +48,18 @@ public class SoulForgeBlock extends BaseEntityBlock {
     }
 
     @Override
-    public BlockState rotate(BlockState state, Rotation rot) {
-        return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
-        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+        if (!state.hasProperty(FACING)) {
+            return state;
+        }
+        Direction facing = state.getValue(FACING);
+        Rotation rotation = mirror.getRotation(facing);
+        return rotate(state, rotation);
     }
 
     @Override
@@ -87,8 +92,7 @@ public class SoulForgeBlock extends BaseEntityBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-                                              Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (level.getBlockEntity(pos) instanceof SoulForgeBlockEntity soulForgeBlockEntity) {
             ItemStack stored = soulForgeBlockEntity.inventory.getStackInSlot(0);
 
@@ -99,7 +103,7 @@ public class SoulForgeBlock extends BaseEntityBlock {
                     stack.shrink(1);
                     level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
                 } else {
-                    player.displayClientMessage(Component.literal("This item is unworthy."), true);
+                    player.displayClientMessage(Component.translatable("tooltip.valcon.soul_forge.tooltip.unworthy"), true);
                 }
 
                 // Attempt to extract item
@@ -119,7 +123,7 @@ public class SoulForgeBlock extends BaseEntityBlock {
                         soulForgeBlockEntity.inventory.setStackInSlot(0, stored);
                         ingotStack.shrink(1);
                         level.playSound(player, pos, ModSounds.SOUL_FORGE_USE.get(), SoundSource.BLOCKS, 1f, 1f);
-                        player.displayClientMessage(Component.literal("Forge successful! Item made imperishable."), true);
+                        player.displayClientMessage(Component.translatable("tooltip.valcon.soul_forge.tooltip.success"), true);
                         for (int i = 0; i < 20; i++) {
                             double offsetX = level.random.nextGaussian() * 0.1;
                             double offsetY = level.random.nextDouble() * 0.1;
@@ -130,7 +134,7 @@ public class SoulForgeBlock extends BaseEntityBlock {
                             level.addParticle(ParticleTypes.SOUL_FIRE_FLAME, x, y, z, offsetX, offsetY, offsetZ);
                         }
                     } else {
-                        player.displayClientMessage(Component.literal("This item is unworthy"), true);
+                        player.displayClientMessage(Component.translatable("tooltip.valcon.soul_forge.tooltip.unworthy"), true);
                     }
                 }
             }

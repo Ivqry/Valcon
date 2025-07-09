@@ -1,6 +1,6 @@
 {
   "type": "create:compacting",
-  "heatRequirement": "superheated",
+  "heat_requirement": "superheated",
   "ingredients": [
     {
       "item": "minecraft:netherite_ingot"

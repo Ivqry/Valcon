@@ -16,16 +16,18 @@ public class ModCreativeModeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Valcon.MOD_ID);
 
     public static final Supplier<CreativeModeTab> VALCON_TAB = CREATIVE_MODE_TAB.register("valcon_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SOULBORN_BLADE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ENCHANTING_GUIDE.get()))
                     .title(Component.translatable("creativetab.valcon.valcon_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.SOULBORN_BLADE);
                         output.accept(ModItems.SOUL_STEEL_INGOT);
                         output.accept(ModItems.SOUL_QUARTZ);
                         output.accept(ModItems.SOUL);
-                        output.accept(ModBlocks.SOUL_FORGE);
-                        output.accept(ModItems.ENCHANTING_GUIDE);
                         output.accept(ModItems.SARISSA);
+                        output.accept(ModItems.ENCHANTING_GUIDE);
+                        output.accept(ModItems.COMPASS_CASTING_MOLD);
+                        output.accept(ModItems.LEMBAS);
+                        output.accept(ModBlocks.SOUL_FORGE);
                         output.accept(ModBlocks.BAST_STATUE);
                     }).build());
 

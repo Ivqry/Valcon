@@ -1,10 +1,9 @@
 package net.ivqrydev.valcon.item;
 
 import net.ivqrydev.valcon.Valcon;
+import net.ivqrydev.valcon.item.custom.*;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Unbreakable;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -21,39 +20,40 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SOUL = ITEMS.register("soul",
-            () -> new Item(new Item.Properties()
+            () -> new SoulItem(new Item.Properties()
                     .rarity(Rarity.RARE)));
 
     public static final DeferredItem<Item> ENCHANTING_GUIDE = ITEMS.register("enchanting_guide",
-            () -> new Item(new Item.Properties()
+            () -> new EnchantingGuideItem(new Item.Properties()
                     .rarity(Rarity.RARE)));
 
-    public static final DeferredItem<SwordItem> SOULBORN_BLADE = ITEMS.register("soulborn_blade",
-            () -> new SwordItem(ModToolTiers.SOUL_STEEL, new Item.Properties()
+    public static final DeferredItem<Item> COMPASS_CASTING_MOLD = ITEMS.register("compass_casting_mold",
+            () -> new CompassCastingMoldItem(new Item.Properties()
+                    .rarity(Rarity.RARE)));
+
+    public static final DeferredItem<Item> LEMBAS = ITEMS.register("lembas",
+            () -> new LembasItem(new Item.Properties()
+                    .food(ModFoodProperties.LEMBAS)
+                    .stacksTo(16)
+            ));
+
+    public static final DeferredItem<ModSwordItem> SOULBORN_BLADE = ITEMS.register("soulborn_blade",
+            () -> new ModSwordItem(ModToolTiers.SOUL_STEEL, new Item.Properties()
                     .rarity(Rarity.RARE)
                     .fireResistant()
                     .durability(1024)
                     .component(DataComponents.UNBREAKABLE, new Unbreakable(true))
-                    .attributes(SwordItem.createAttributes(ModToolTiers.SOUL_STEEL, 8, -2.8f))) {
-                @Override
-                public boolean isDamageable(net.minecraft.world.item.ItemStack stack) {
-                    return false;
-                }
-            });
+                    .attributes(SwordItem.createAttributes(ModToolTiers.SOUL_STEEL, 8, -3f))
+            ));
 
-    public static final DeferredItem<SwordItem> SARISSA = ITEMS.register("sarissa",
-            () -> new SwordItem(ModToolTiers.ANCIENT, new Item.Properties()
+    public static final DeferredItem<ModSwordItem> SARISSA = ITEMS.register("sarissa",
+            () -> new ModSwordItem(ModToolTiers.ANCIENT, new Item.Properties()
                     .rarity(Rarity.RARE)
                     .fireResistant()
                     .durability(6144)
-                    .attributes(SwordItem.createAttributes(ModToolTiers.ANCIENT, 8, -2.6f))) {
-                @Override
-                public boolean isDamageable(net.minecraft.world.item.ItemStack stack) {
-                    return false;
-                }
-            });
+                    .attributes(SwordItem.createAttributes(ModToolTiers.ANCIENT, 8, -2.6f))
+            ));
 
-    public static void register(IEventBus eventBus) {
-        ITEMS.register(eventBus);
+    public static void register(IEventBus eventBus) {ITEMS.register(eventBus);
     }
 }

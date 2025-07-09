@@ -2,8 +2,13 @@ package net.ivqrydev.valcon.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.ivqrydev.valcon.block.entity.BastStatueBlockEntity;
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -18,6 +23,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.*;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class BastStatueBlock extends Block implements EntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -63,7 +70,12 @@ public class BastStatueBlock extends Block implements EntityBlock {
 
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
-        return state.rotate(mirror.getRotation(state.getValue(FACING)));
+        if (!state.hasProperty(FACING)) {
+            return state;
+        }
+        Direction facing = state.getValue(FACING);
+        Rotation rotation = mirror.getRotation(facing);
+        return rotate(state, rotation);
     }
 
     @Override
@@ -116,5 +128,10 @@ public class BastStatueBlock extends Block implements EntityBlock {
                     if (be instanceof BastStatueBlockEntity cast)
                         BastStatueBlockEntity.tick(lvl, pos, st, cast);
                 };
+    }
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip.valcon.bast_statue.tooltip").withStyle(ChatFormatting.GRAY));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

@@ -35,7 +35,7 @@ public class BastStatueBlockEntity extends BlockEntity {
             int cooldown = blockEntity.cooldownMap.getOrDefault(id, 0);
 
             if (cooldown == 0) {
-                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 0, false, false, true)); // 5s duration
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 300, 0, false, false, true)); // 15s duration
                 blockEntity.cooldownMap.put(id, 60); // 3s cooldown
             }
         }

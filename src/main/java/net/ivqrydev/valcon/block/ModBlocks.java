@@ -6,8 +6,7 @@ import net.ivqrydev.valcon.block.custom.SoulForgeBlock;
 import net.ivqrydev.valcon.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -26,7 +25,7 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .mapColor(MapColor.COLOR_BLACK)
                     .sound(SoundType.NETHERITE_BLOCK)
-                    .lightLevel((soul_forge) -> 15)
+                    .lightLevel((state) -> 15)
             ));
 
     public static final DeferredBlock<Block> BAST_STATUE = registerBlock("bast_statue",
@@ -41,6 +40,14 @@ public class ModBlocks {
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
+        return toReturn;
+    }
+
+    private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block, boolean registerItem) {
+        DeferredBlock<T> toReturn = BLOCKS.register(name, block);
+        if (registerItem) {
+            registerBlockItem(name, toReturn);
+        }
         return toReturn;
     }
 
