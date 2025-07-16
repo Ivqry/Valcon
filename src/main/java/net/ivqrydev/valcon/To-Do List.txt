@@ -1,5 +1,1 @@
-- Complete the Soul Quartz implementation.
-- Change name of Waystones to Obelisks.
-- Implement Item Obliterator configs.
-- Implement the Soul Piercer bow.
-- Figure out the "Limited Enchantability" bug revolving around The Sarissa.
+- Nothing!

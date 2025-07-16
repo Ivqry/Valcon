@@ -37,8 +37,8 @@ public class ModItems {
                     .stacksTo(16)
             ));
 
-    public static final DeferredItem<ModSwordItem> SOULBORN_BLADE = ITEMS.register("soulborn_blade",
-            () -> new ModSwordItem(ModToolTiers.SOUL_STEEL, new Item.Properties()
+    public static final DeferredItem<SwordItem> SOULBORN_BLADE = ITEMS.register("soulborn_blade",
+            () -> new SwordItem(ModToolTiers.SOUL_STEEL, new Item.Properties()
                     .rarity(Rarity.RARE)
                     .fireResistant()
                     .durability(1024)
@@ -46,8 +46,8 @@ public class ModItems {
                     .attributes(SwordItem.createAttributes(ModToolTiers.SOUL_STEEL, 8, -3f))
             ));
 
-    public static final DeferredItem<ModSwordItem> SARISSA = ITEMS.register("sarissa",
-            () -> new ModSwordItem(ModToolTiers.ANCIENT, new Item.Properties()
+    public static final DeferredItem<SwordItem> SARISSA = ITEMS.register("sarissa",
+            () -> new SwordItem(ModToolTiers.ANCIENT, new Item.Properties()
                     .rarity(Rarity.RARE)
                     .fireResistant()
                     .durability(6144)

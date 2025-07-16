@@ -33,6 +33,7 @@ public class Valcon {
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             modEventBus.addListener(ValconClient::onClientSetup);
+            modEventBus.addListener(ValconClient::registerBER);
         }
     }
 
