@@ -37,6 +37,10 @@ public class ModItems {
                     .stacksTo(16)
             ));
 
+    public static final DeferredItem<Item> MYTHRIL_CORE = ITEMS.register("mythril_core",
+            () -> new MythrilCoreItem(new Item.Properties()
+                    .rarity(Rarity.RARE)));
+
     public static final DeferredItem<SwordItem> SOULBORN_BLADE = ITEMS.register("soulborn_blade",
             () -> new SwordItem(ModToolTiers.SOUL_STEEL, new Item.Properties()
                     .rarity(Rarity.RARE)

@@ -23,6 +23,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SOUL_STEEL_INGOT);
                         output.accept(ModItems.SOUL_QUARTZ);
                         output.accept(ModItems.SOUL);
+                        output.accept(ModItems.MYTHRIL_CORE);
                         output.accept(ModItems.SARISSA);
                         output.accept(ModItems.ENCHANTING_GUIDE);
                         output.accept(ModItems.COMPASS_CASTING_MOLD);

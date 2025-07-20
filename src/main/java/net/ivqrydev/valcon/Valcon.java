@@ -8,6 +8,8 @@ import net.ivqrydev.valcon.item.ModCreativeModeTabs;
 import net.ivqrydev.valcon.item.ModItems;
 import net.ivqrydev.valcon.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
@@ -25,6 +27,8 @@ public class Valcon {
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Valcon(IEventBus modEventBus) {
+
+        // Your existing mod content registrations
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -44,7 +48,10 @@ public class Valcon {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        // Placeholder
+        event.enqueueWork(() -> {
+            FireBlock fire = (FireBlock) Blocks.FIRE;
+            fire.setFlammable(Blocks.COBWEB, 100, 100);
+        });
     }
 
     @SubscribeEvent
